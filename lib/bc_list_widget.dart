@@ -11,7 +11,15 @@ class BCListWidget extends StatefulWidget {
 
 class _BCListWidgetState extends State<BCListWidget> {
 
-  List<dynamic> bcs = [
+  final List<dynamic> _bcs = [
+    "홍길동",
+    "영수",
+    "철수",
+    "민규",
+    "홍길동",
+    "영수",
+    "철수",
+    "민규",
     "홍길동",
     "영수",
     "철수",
@@ -20,12 +28,17 @@ class _BCListWidgetState extends State<BCListWidget> {
 
   @override
   Widget build(BuildContext context) {
-    return ListView.builder(
+    return ListView.separated(
       padding: const EdgeInsets.all(8),
-      itemCount: bcs.length,
+      itemCount: _bcs.length,
       itemBuilder: (BuildContext context, int index) {
-      return Text(bcs[index]);
-      }
+        return Container(
+          height: 50,
+          child: Text(_bcs[index]),
+        );
+      },
+      separatorBuilder: (BuildContext context, int index) =>
+            	const Divider(thickness: 3),
     );
   }
 }
