@@ -22,6 +22,11 @@ class MyApp extends StatelessWidget {
           title: Text("BC scan"),
         ),
         body: BCListWidget(),
+        floatingActionButton: FloatingActionButton.extended(
+          label: Text("ADD"),
+          icon: Icon(Icons.camera_alt_outlined),
+          onPressed: () => {},
+        ),
       ),
     );
   }
