@@ -23,7 +23,7 @@ class MyApp extends StatelessWidget {
       initialRoute: '/',
       routes: {
         '/': (context) => HomePage(),
-        '/camera': (context) => CameraApp(cameras: cameras,),
+        '/camera': (context) => CameraScreen(cameras: cameras,),
       },
       theme: ThemeData(
         primarySwatch: Colors.blue,

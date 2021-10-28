@@ -1,19 +1,18 @@
-import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:camera/camera.dart';
 
-class CameraApp extends StatefulWidget {
+class CameraScreen extends StatefulWidget {
   final List<CameraDescription> cameras;
-  const CameraApp({
+  const CameraScreen({
     Key? key,
     required this.cameras,
   }) : super(key: key);
 
   @override
-  _CameraAppState createState() => _CameraAppState();
+  _CameraScreenState createState() => _CameraScreenState();
 }
 
-class _CameraAppState extends State<CameraApp> {
+class _CameraScreenState extends State<CameraScreen> {
   late CameraController controller;
 
   @override
@@ -27,7 +26,7 @@ class _CameraAppState extends State<CameraApp> {
     });
     super.initState();
   }
-  
+
   @override
   void dispose() {
     controller.dispose();
