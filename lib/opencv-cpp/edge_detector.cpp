@@ -1,4 +1,4 @@
-#include "edge_detector.hpp"
+#include "edge_detector.h"
 
 #include <opencv2/opencv.hpp>
 #include <opencv2/imgproc/types_c.h>

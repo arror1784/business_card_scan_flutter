@@ -34,3 +34,16 @@ bool process_image(
     double bottomRightX,
     double bottomRightY
 );
+
+extern "C"
+bool crop_image( 
+    char* path,
+    double topLeftX,
+    double topLeftY,
+    double topRightX,
+    double topRightY,
+    double bottomLeftX,
+    double bottomLeftY,
+    double bottomRightX,
+    double bottomRightY
+);

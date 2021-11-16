@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'bc_list_widget.dart';
 import 'camera_widget.dart';
 import 'package:camera/camera.dart';
+import 'edge_screen.dart';
 
 List<CameraDescription> cameras = <CameraDescription>[];
 
@@ -24,6 +25,7 @@ class MyApp extends StatelessWidget {
       routes: {
         '/': (context) => HomePage(),
         '/camera': (context) => CameraScreen(cameras: cameras,),
+        // '/edge': (context) => EdgeScreen(context.),
       },
       theme: ThemeData(
         primarySwatch: Colors.blue,

@@ -1,6 +1,6 @@
-#include "native_edge_detection.hpp"
-#include "edge_detector.hpp"
-#include "image_processor.hpp"
+#include "native_edge_detection.h"
+#include "edge_detector.h"
+#include "image_processor.h"
 #include <stdlib.h>
 #include <opencv2/opencv.hpp>
 
@@ -76,4 +76,21 @@ bool process_image(
     );
 
     return cv::imwrite(path, resizedMat);
+}
+extern "C" __attribute__((visibility("default"))) __attribute__((used))
+bool crop_image( 
+    char* path,
+    double topLeftX,
+    double topLeftY,
+    double topRightX,
+    double topRightY,
+    double bottomLeftX,
+    double bottomLeftY,
+    double bottomRightX,
+    double bottomRightY
+){
+    cv::Mat mat = cv::imread(path);
+
+    // cv::Mat cropped_img = mat(Range(top));
+
 }

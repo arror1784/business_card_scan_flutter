@@ -1,3 +1,4 @@
+import 'package:business_card_scan_flutter/edge_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:camera/camera.dart';
 
@@ -91,9 +92,11 @@ class _CameraScreenState extends State<CameraScreen> {
                     try{
                       await _initializeControllerFuture;
                       var xFile = await _controller.takePicture();
-                      setState(() {
-                        capturedImages.add(File(xFile.path));
-                      });
+                      
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => EdgeScreen(xFile.path)));
                     }on CameraException{
                       return;
                     }
@@ -104,28 +107,6 @@ class _CameraScreenState extends State<CameraScreen> {
                     decoration: BoxDecoration(
                       shape: BoxShape.circle,
                       color: Colors.white,
-                    ),
-                  ),
-                ),
-                GestureDetector(
-                  onTap: () {
-                    // if (capturedImages.isEmpty) return;
-                    // Navigator.push(
-                    //     context,
-                    //     MaterialPageRoute(
-                    //         builder: (context) => GalleryScreen(
-                    //             images: capturedImages.reversed.toList())));
-                  },
-                  child: Container(
-                    height: 60,
-                    width: 60,
-                    decoration: BoxDecoration(
-                      border: Border.all(color: Colors.white),
-                      image: capturedImages.isNotEmpty
-                          ? DecorationImage(
-                              image: FileImage(capturedImages.last),
-                              fit: BoxFit.cover)
-                          : null,
                     ),
                   ),
                 ),
